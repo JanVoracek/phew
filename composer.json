@@ -1,0 +1,14 @@
+{
+    "name": "JanVoracek/PhpJasmine",
+    "description": "BDD-style unit testing framework",
+    "authors": [
+        {
+            "name": "JanVoracek",
+            "email": "jan@voracek.net"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "3.7.1"
+
+    }
+}

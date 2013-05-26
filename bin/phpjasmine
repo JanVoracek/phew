@@ -1,0 +1,51 @@
+#!C:\php\php.exe
+<?php
+
+$specDir = "spec";
+//$phpJasmineDir = __DIR__ . DIRECTORY_SEPARATOR . "phpJasmine";
+$phpJasmineDir = "src/PhpJasmine";
+$phpJasmineBootstrap = $phpJasmineDir . DIRECTORY_SEPARATOR . "bootstrap.php";
+
+
+ob_start();
+
+register_shutdown_function(function(){ ob_end_flush(); });
+
+require_once($phpJasmineBootstrap);
+
+if(!is_dir($specDir)){
+	die("Spec dir is missing");
+}
+
+
+class RecursiveSpecIterator extends RecursiveFilterIterator {
+
+
+    public function accept() {
+        return self::filenameEndsWith($this->current()->getFilename(), '.spec.php');
+    }
+
+    private static function filenameEndsWith($filename, $str)
+    {
+        $length = strlen($str);
+        return (substr($filename, -$length) === $str);
+    }
+}
+
+$recursiveDirectoryIterator = new RecursiveDirectoryIterator($specDir);
+$recursiveSpecIterator = new RecursiveSpecIterator($recursiveDirectoryIterator);
+
+
+foreach($recursiveSpecIterator as $fileInfo){
+	require_once($fileInfo->getPathName());
+}
+
+
+echo "
+PhpJasmine (v0.0.1-alpha)
+-------------------------
+
+";
+$start = microtime(true);
+\PhpJasmine\GlobalContext::getContext()->runExamples();
+echo "\n\nExecution time: " . round(microtime(true) - $start, 2) . 's';
