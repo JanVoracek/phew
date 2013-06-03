@@ -80,4 +80,23 @@ class ContextTest extends PHPUnit_Framework_TestCase {
         $callback->expects($this->once())->method("__invoke");
         $this->context->runExamples();
     }
+
+    /**
+     * @expectedException \PhpJasmine\FailException
+     * @expectedExceptionMessage Some message
+     */
+    public function test_contextShouldThrowOnFail() {
+        $message = "Some message";
+        $this->context->fail($message);
+    }
+
+    /**
+     * @expectedException \PhpJasmine\FailException
+     * @expectedExceptionMessage Unexpected exception
+     */
+    public function test_throwingDescribeShouldFailWithUnexpectedExceptionError() {
+        $this->context->describe("", function(){
+            throw new Exception("some title");
+        });
+    }
 }
