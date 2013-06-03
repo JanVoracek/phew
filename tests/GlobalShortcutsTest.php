@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../src/PhpJasmine/GlobalContext.php';
+require_once __DIR__ . '/../src/PhpJasmine/Expectation.php';
 require_once __DIR__ . '/../src/PhpJasmine/phpJasmineShortcuts.php';
 require_once __DIR__ . '/utils/CallbackChecker.php';
 
@@ -39,6 +40,11 @@ class GlobalShortcutsTest extends PHPUnit_Framework_TestCase {
 
     public function test_afterEachCallsContextAfterEach() {
         $this->checkFunctionShortcut('afterEach');
+    }
+
+    public function test_expectCallsContextExpect() {
+        $expectation = expect("some value");
+        $this->assertInstanceOf('\PhpJasmine\PositiveExpectation', $expectation);
     }
 
     private function checkStructureShortcut($shortcutName) {
