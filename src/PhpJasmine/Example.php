@@ -4,12 +4,10 @@ namespace PhpJasmine;
 class Example {
 
     private $name;
-    private $group;
     private $fn;
 
-    function __construct($name, ExampleGroup $group = null, callable $fn = null) {
+    function __construct($name, $fn = null) {
         $this->name = $name;
-        $this->group = $group;
         $this->fn = $fn;
     }
 

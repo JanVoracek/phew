@@ -35,7 +35,7 @@ class Context {
 
     public function it($title, callable $fn = null) {
         $fullName = $this->getFullName();
-        $example = new Example($fullName, $this->currentExampleGroup, $fn);
+        $example = new Example($fullName, $fn);
         $this->currentExampleGroup->add($example);
     }
 
@@ -54,8 +54,8 @@ class Context {
         throw new FailException($title);
     }
 
-    public function runExamples() {
-        $reporter = new Reporter();
+    public function runExamples(Reporter $reporter = null) {
+        if ($reporter === null) $reporter = new Reporter();
         $this->rootExampleGroup->run($reporter);
     }
 
