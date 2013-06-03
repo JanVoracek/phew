@@ -82,4 +82,18 @@ class ToEqualMatcherTest extends PHPUnit_Framework_TestCase {
         $matcher = new ToEqualMatcher($array1);
         $this->assertTrue($matcher->matches($array2));
     }
+
+    public function test_matcherShouldGiveNiceFailureMessage() {
+        $matcher = new ToEqualMatcher(1);
+        $matcher->matches(2);
+        $failureMessage = 'expected 1, got 2';
+        $this->assertEquals($failureMessage, $matcher->getFailureMessage());
+    }
+
+    public function test_matcherShouldGiveNiceNegativeFailureMessage() {
+        $matcher = new ToEqualMatcher(1);
+        $matcher->matches(2);
+        $failureMessage = 'expected 2 not to equal 1';
+        $this->assertEquals($failureMessage, $matcher->getNegativeFailureMessage());
+    }
 }
