@@ -28,6 +28,19 @@ class ExampleTest extends PHPUnit_Framework_TestCase {
         $example->run($reporter);
     }
 
+    public function test_exampleGroupOnFailureExampleCallsReporterWithReferenceToItselfAndTheException() {
+        $throwedException = new Exception("some message");
+        $reporter = $this->getMock('\PhpJasmine\Reporter');
+        $example = $this->getMockBuilder('\PhpJasmine\Example')->disableOriginalConstructor()->getMock();
+        $example->expects($this->any())->method('run')->will($this->throwException($throwedException));
+
+        $exampleGroup = new \PhpJasmine\ExampleGroup("");
+        $exampleGroup->add($example);
+        $reporter->expects($this->once())->method('reportFailedExample')->with($this->equalTo($exampleGroup), $this->equalTo($throwedException));
+
+        $exampleGroup->run($reporter);
+    }
+
     /**
      * Only for 100% code coverage...
      */
