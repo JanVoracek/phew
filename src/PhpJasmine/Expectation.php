@@ -18,9 +18,6 @@ abstract class Expectation {
      */
     protected $matcher;
 
-    /**
-     * @var Matcher[]
-     */
     protected static $matchers;
 
     public static function setMatchers(array $matchers) {
@@ -47,10 +44,10 @@ abstract class Expectation {
         if (!isset(self::$matchers[$name]) || !class_exists(self::$matchers[$name][0]))
             throw new \Exception("Matcher not found");
 
-        $matcherClass = self::$matchers[$name][0];
         if (count($arguments) == 0 && count(self::$matchers[$name]) == 0)
             throw new \InvalidArgumentException("Argument not found");
 
+        $matcherClass = self::$matchers[$name][0];
         $expected = count($arguments) > 0 ? $arguments[0] : self::$matchers[$name][1];
         $this->matcher = new $matcherClass($expected);
         if (!$this->meetsExpectation($this->actual)) {
