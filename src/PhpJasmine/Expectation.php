@@ -8,6 +8,8 @@ require_once __DIR__ . '/Matchers/ToEqualMatcher.php';
  * @property Expectation not
  * @method void toBe($actual)
  * @method void toEqual($actual)
+ * @method void toBeTruthy()
+ * @method void toBeFalsy()
  */
 abstract class Expectation {
 

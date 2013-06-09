@@ -16,12 +16,15 @@ require_once __DIR__ . DS . "phpJasmineShortcuts.php";
 
 require_once __DIR__ . DS . "Matchers" . DS . "ToBeMatcher.php";
 require_once __DIR__ . DS . "Matchers" . DS . "ToEqualMatcher.php";
+require_once __DIR__ . DS . "Matchers" . DS . "BooleanMatcher.php";
 
 call_user_func(
     function () {
         $matchers = [
             'toBe' => ['PhpJasmine\\Matchers\\ToBeMatcher'],
             'toEqual' => ['PhpJasmine\\Matchers\\ToEqualMatcher'],
+            'toBeTruthy' => ['PhpJasmine\\Matchers\\BooleanMatcher', true],
+            'toBeFalsy' => ['PhpJasmine\\Matchers\\BooleanMatcher', false],
         ];
-        \PhpJasmine\Expectation::setMatchers($matchers);
+        Expectation::setMatchers($matchers);
     });
