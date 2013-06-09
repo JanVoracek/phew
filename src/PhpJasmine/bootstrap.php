@@ -25,6 +25,7 @@ call_user_func(
             'toEqual' => ['PhpJasmine\\Matchers\\ToEqualMatcher'],
             'toBeTruthy' => ['PhpJasmine\\Matchers\\BooleanMatcher', true],
             'toBeFalsy' => ['PhpJasmine\\Matchers\\BooleanMatcher', false],
+            'toBeNull' => ['PhpJasmine\\Matchers\\ToBeMatcher', null]
         ];
         Expectation::setMatchers($matchers);
     });

@@ -10,6 +10,7 @@ require_once __DIR__ . '/Matchers/ToEqualMatcher.php';
  * @method void toEqual($actual)
  * @method void toBeTruthy()
  * @method void toBeFalsy()
+ * @method void toBeNull()
  */
 abstract class Expectation {
 
