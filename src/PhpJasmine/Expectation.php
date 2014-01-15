@@ -46,7 +46,7 @@ abstract class Expectation {
 
     function __call($name, $arguments) {
         if (!isset(self::$matchers[$name]) || !class_exists(self::$matchers[$name][0]))
-            throw new \Exception("Matcher not found");
+            throw new \Exception("Matcher \"$name\" not found");
 
         if (count($arguments) == 0 && count(self::$matchers[$name]) == 0)
             throw new \InvalidArgumentException("Argument not found");

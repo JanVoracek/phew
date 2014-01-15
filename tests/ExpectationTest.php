@@ -11,7 +11,7 @@ class ExpectationTest extends PHPUnit_Framework_TestCase {
 
     /**
      * @expectedException Exception
-     * @expectedExceptionMessage Matcher not found
+     * @expectedExceptionMessage Matcher "toMatch" not found
      */
     public function test_unknownMatcherThrowsExeption() {
         $expectation = new PositiveExpectation('');
