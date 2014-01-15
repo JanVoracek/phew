@@ -1,22 +1,21 @@
 <?php
 namespace PhpJasmine;
 
-define("DS", DIRECTORY_SEPARATOR);
+require_once __DIR__ . "/Context.php";
+require_once __DIR__ . "/Example.php";
+require_once __DIR__ . "/ExampleGroup.php";
+require_once __DIR__ . "/Expectation.php";
+require_once __DIR__ . "/Matcher.php";
+require_once __DIR__ . "/Reporter.php";
 
-require_once __DIR__ . DS . "Context.php";
-require_once __DIR__ . DS . "Example.php";
-require_once __DIR__ . DS . "ExampleGroup.php";
-require_once __DIR__ . DS . "Expectation.php";
-require_once __DIR__ . DS . "Matcher.php";
-require_once __DIR__ . DS . "Reporter.php";
-
-require_once __DIR__ . DS . "GlobalContext.php";
-require_once __DIR__ . DS . "phpJasmineShortcuts.php";
+require_once __DIR__ . "/GlobalContext.php";
+require_once __DIR__ . "/phpJasmineShortcuts.php";
 
 
-require_once __DIR__ . DS . "Matchers" . DS . "ToBeMatcher.php";
-require_once __DIR__ . DS . "Matchers" . DS . "ToEqualMatcher.php";
-require_once __DIR__ . DS . "Matchers" . DS . "BooleanMatcher.php";
+require_once __DIR__ . "/Matchers/ToBeMatcher.php";
+require_once __DIR__ . "/Matchers/ToEqualMatcher.php";
+require_once __DIR__ . "/Matchers/BooleanMatcher.php";
+require_once __DIR__ . "/Matchers/RegularExpressionMatcher.php";
 
 call_user_func(
     function () {
@@ -25,7 +24,8 @@ call_user_func(
             'toEqual' => ['PhpJasmine\\Matchers\\ToEqualMatcher'],
             'toBeTruthy' => ['PhpJasmine\\Matchers\\BooleanMatcher', true],
             'toBeFalsy' => ['PhpJasmine\\Matchers\\BooleanMatcher', false],
-            'toBeNull' => ['PhpJasmine\\Matchers\\ToBeMatcher', null]
+            'toBeNull' => ['PhpJasmine\\Matchers\\ToBeMatcher', null],
+            'toMatch' => ['PhpJasmine\\Matchers\\RegularExpressionMatcher']
         ];
         Expectation::setMatchers($matchers);
     });

@@ -11,6 +11,7 @@ require_once __DIR__ . '/Matchers/ToEqualMatcher.php';
  * @method void toBeTruthy()
  * @method void toBeFalsy()
  * @method void toBeNull()
+ * @method void toMatch($pattern)
  */
 abstract class Expectation {
 
