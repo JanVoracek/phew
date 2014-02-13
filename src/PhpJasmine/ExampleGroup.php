@@ -10,31 +10,31 @@ class ExampleGroup extends Example {
     private $examples = [];
 
     /**
-     * @var callable|null
+     * @var callable[]
      */
-    private $examplePrepareFunction;
+    private $examplePrepareFunctions = [];
 
     /**
-     * @var callable|null
+     * @var callable[]
      */
-    private $exampleCleanupFunction;
+    private $exampleCleanupFunctions = [];
 
     function __construct($name, ExampleGroup $group = null) {
         parent::__construct($name, $group, null);
     }
 
     public function run(Reporter $reporter) {
-        $prepareFunction = $this->examplePrepareFunction;
-        $cleanupFunction = $this->exampleCleanupFunction;
+        $prepareFunctions = $this->examplePrepareFunctions;
+        $cleanupFunctions = $this->exampleCleanupFunctions;
 
         foreach ($this->examples as $example)
             try {
-                if (is_callable($prepareFunction) && !($example instanceof ExampleGroup)) {
-                    $prepareFunction();
+                if (!($example instanceof ExampleGroup)) {
+                    $this->callAllFunctions($prepareFunctions);
                 }
                 $example->run($reporter);
-                if (is_callable($cleanupFunction) && !($example instanceof ExampleGroup)) {
-                    $cleanupFunction();
+                if (!($example instanceof ExampleGroup)) {
+                    $this->callAllFunctions($cleanupFunctions);
                 }
             } catch (\Exception $ex) {
                 $reporter->reportFailedExample($this, $ex);
@@ -50,10 +50,17 @@ class ExampleGroup extends Example {
     }
 
     public function callBeforeEachExample(callable $fn) {
-        $this->examplePrepareFunction = $fn;
+        $this->examplePrepareFunctions[] = $fn;
+
     }
 
     public function callAfterEachExample(callable $fn) {
-        $this->exampleCleanupFunction = $fn;
+        $this->exampleCleanupFunctions[] = $fn;
+    }
+
+    private function callAllFunctions($functions) {
+        array_walk($functions, function ($function) {
+            $function();
+        });
     }
 }
