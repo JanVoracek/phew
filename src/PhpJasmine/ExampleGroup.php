@@ -43,6 +43,12 @@ class ExampleGroup extends Example {
 
     public function add(Example $example) {
         $this->examples[] = $example;
+        if($example instanceof ExampleGroup) {
+            foreach($this->examplePrepareFunctions as $prepareFunction)
+                $example->callBeforeEachExample($prepareFunction);
+            foreach($this->exampleCleanupFunctions as $cleanupFunction)
+                $example->callBeforeEachExample($cleanupFunction);
+        }
     }
 
     public static function createRootExampleGroup() {
@@ -51,11 +57,17 @@ class ExampleGroup extends Example {
 
     public function callBeforeEachExample(callable $fn) {
         $this->examplePrepareFunctions[] = $fn;
+        foreach($this->examples as $example)
+            if($example instanceof ExampleGroup)
+                $example->callBeforeEachExample($fn);
 
     }
 
     public function callAfterEachExample(callable $fn) {
         $this->exampleCleanupFunctions[] = $fn;
+        foreach($this->examples as $example)
+            if($example instanceof ExampleGroup)
+                $example->callAfterEachExample($fn);
     }
 
     private function callAllFunctions($functions) {

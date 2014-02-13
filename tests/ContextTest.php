@@ -66,7 +66,7 @@ class ContextTest extends PHPUnit_Framework_TestCase {
         $this->context->runExamples();
     }
 
-    public function test_beforeEachShouldNotBeCalledForExamplesNestedInAnotherExampleGroup() {
+    public function test_beforeEachShouldBeCalledForExamplesNestedInAnotherExampleGroup() {
         $callback = $this->getMock("CallbackChecker");
 
         $this->context->it("", function(){});
@@ -77,7 +77,7 @@ class ContextTest extends PHPUnit_Framework_TestCase {
         });
 
         $this->context->beforeEach($callback);
-        $callback->expects($this->once())->method("__invoke");
+        $callback->expects($this->exactly(2))->method("__invoke");
         $this->context->runExamples();
     }
 

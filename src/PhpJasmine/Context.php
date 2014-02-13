@@ -23,7 +23,7 @@ class Context {
             try {
                 $fn();
             } catch (\Exception $ex) {
-                fail("Unexpected exception");
+                $this->fail("Unexpected exception");
             }
 
             $this->currentExampleGroup = $parentGroup;
