@@ -28,6 +28,11 @@ abstract class Expectation {
         self::$matchers = $matchers;
     }
 
+    public static function addMatcher($methodName, $matcher, $defaultValue = null) {
+        $args = func_get_args();
+        array_shift($args);
+        self::$matchers[$methodName] = $args;
+    }
 
     function __construct($actual) {
         $this->actual = $actual;
