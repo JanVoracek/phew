@@ -1,5 +1,5 @@
 {
-    "name": "JanVoracek/PhpJasmine",
+    "name": "janvoracek/phpjasmine",
     "description": "BDD-style unit testing framework",
     "keywords": [
         "bdd", "test", "unit", "framework", "phpjasmine", "jasmine"
