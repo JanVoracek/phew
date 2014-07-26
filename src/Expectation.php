@@ -57,8 +57,15 @@ abstract class Expectation {
             throw new \InvalidArgumentException("Argument not found");
 
         $matcherClass = self::$matchers[$name][0];
-        $expected = count($arguments) > 0 ? $arguments[0] : self::$matchers[$name][1];
-        $this->matcher = new $matcherClass($expected);
+
+        $isExpectationExplicit = count($arguments) > 0 || isset(self::$matchers[$name][1]);
+        if($isExpectationExplicit) {
+            $expected = count($arguments) > 0 ? $arguments[0] : self::$matchers[$name][1];
+            $this->matcher = new $matcherClass($expected);
+        } else {
+            $this->matcher = new $matcherClass();
+        }
+
         if (!$this->meetsExpectation($this->actual)) {
             throw new ExpectationException($this->getMatcherFailureMessage());
         }
