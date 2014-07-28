@@ -1,7 +1,7 @@
 <?php
-require_once __DIR__ . '/../src/PhpJasmine/GlobalContext.php';
-require_once __DIR__ . '/../src/PhpJasmine/Expectation.php';
-require_once __DIR__ . '/../src/PhpJasmine/phpJasmineShortcuts.php';
+require_once __DIR__ . '/../src/GlobalContext.php';
+require_once __DIR__ . '/../src/Expectation.php';
+require_once __DIR__ . '/../src/phpJasmineShortcuts.php';
 require_once __DIR__ . '/utils/CallbackChecker.php';
 
 class GlobalShortcutsTest extends PHPUnit_Framework_TestCase {
@@ -48,7 +48,7 @@ class GlobalShortcutsTest extends PHPUnit_Framework_TestCase {
     }
 
     private function checkStructureShortcut($shortcutName) {
-        $context = $this->getMock('PhpJasmine\Context', [$shortcutName]);
+        $context = $this->getMock('PhpJasmine\Context', array($shortcutName));
         \PhpJasmine\GlobalContext::setContext($context);
 
         $context->expects($this->once())->method($shortcutName)->with($this->identicalTo($this->title), $this->identicalTo($this->callback));
@@ -56,7 +56,7 @@ class GlobalShortcutsTest extends PHPUnit_Framework_TestCase {
     }
 
     private function checkFunctionShortcut($shortcutName) {
-        $context = $this->getMock('PhpJasmine\Context', [$shortcutName]);
+        $context = $this->getMock('PhpJasmine\Context', array($shortcutName));
         \PhpJasmine\GlobalContext::setContext($context);
 
         $context->expects($this->once())->method($shortcutName)->with($this->identicalTo($this->callback));

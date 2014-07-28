@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../../src/PhpJasmine/Matchers/BooleanMatcher.php';
+require_once __DIR__ . '/../../src/Matchers/BooleanMatcher.php';
 
 use \PhpJasmine\Matchers\BooleanMatcher;
 
@@ -27,7 +27,7 @@ class TruthyBooleanMatcherTest extends PHPUnit_Framework_TestCase {
     }
 
     public function test_truthyMatcherShouldMatchNonEmptyArray() {
-        $this->assertTrue($this->matcher->matches(['']));
+        $this->assertTrue($this->matcher->matches(array('')));
     }
 
     public function test_truthyMatcherShouldMatchObject() {
@@ -47,7 +47,7 @@ class TruthyBooleanMatcherTest extends PHPUnit_Framework_TestCase {
     }
 
     public function test_truthyMatcherShouldNotMatchEmptyArray() {
-        $this->assertFalse($this->matcher->matches([]));
+        $this->assertFalse($this->matcher->matches(array()));
     }
 
     public function test_truthyMatcherShouldNotMatchNull() {

@@ -1,8 +1,8 @@
 <?php
 use PhpJasmine\Matchers\RegularExpressionMatcher;
 
-include_once __DIR__ . '/../../src/PhpJasmine/Matcher.php';
-include_once __DIR__ . '/../../src/PhpJasmine/Matchers/RegularExpressionMatcher.php';
+include_once __DIR__ . '/../../src/Matcher.php';
+include_once __DIR__ . '/../../src/Matchers/RegularExpressionMatcher.php';
 
 
 

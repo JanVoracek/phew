@@ -1,7 +1,7 @@
 <?php
 
-require_once __DIR__ . '/../src/PhpJasmine/Example.php';
-require_once __DIR__ . '/../src/PhpJasmine/Reporter.php';
+require_once __DIR__ . '/../src/Example.php';
+require_once __DIR__ . '/../src/Reporter.php';
 require_once __DIR__ . '/utils/CallbackChecker.php';
 
 class ExampleTest extends PHPUnit_Framework_TestCase {

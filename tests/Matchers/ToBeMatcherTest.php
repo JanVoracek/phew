@@ -1,6 +1,6 @@
 <?php
-include_once __DIR__ . '/../../src/PhpJasmine/Matcher.php';
-include_once __DIR__ . '/../../src/PhpJasmine/Matchers/ToBeMatcher.php';
+include_once __DIR__ . '/../../src/Matcher.php';
+include_once __DIR__ . '/../../src/Matchers/ToBeMatcher.php';
 
 use PhpJasmine\Matchers\ToBeMatcher;
 
@@ -70,8 +70,8 @@ class ToBeMatcherTest extends PHPUnit_Framework_TestCase {
     }
 
     public function test_twoSameArraysShouldMatch() {
-        $array1 = ['foo' => 'bar'];
-        $array2 = ['foo' => 'bar'];
+        $array1 = array('foo' => 'bar');
+        $array2 = array('foo' => 'bar');
         $matcher = new ToBeMatcher($array1);
         $this->assertTrue($matcher->matches($array2));
     }

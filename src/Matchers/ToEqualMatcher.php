@@ -10,7 +10,7 @@ class ToEqualMatcher implements Matcher {
 
     const FLOAT_EPSILON = 1e-8;
 
-    public function __construct($expected) {
+    public function __construct($expected = null) {
         $this->expected = $expected;
     }
 

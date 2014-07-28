@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . '/../src/PhpJasmine/Expectation.php';
-require_once __DIR__ . '/../src/PhpJasmine/Matcher.php';
+require_once __DIR__ . '/../src/Expectation.php';
+require_once __DIR__ . '/../src/Matcher.php';
 
 use PhpJasmine\PositiveExpectation,
     PhpJasmine\NegativeExpectation,
@@ -20,7 +20,7 @@ class ExpectationTest extends PHPUnit_Framework_TestCase {
 
     public function test_matchersCanBeDynamicallyChanged() {
         $expectation = new PositiveExpectation('');
-        $expectation->setMatchers(array('toMatch' => ['AlwaysTrueMatcher']));
+        $expectation->setMatchers(array('toMatch' => array('AlwaysTrueMatcher')));
         $expectation->toMatch('anything');
     }
 
@@ -30,13 +30,13 @@ class ExpectationTest extends PHPUnit_Framework_TestCase {
      */
     public function test_positiveExpectationCanBeTurnedToNegativeExpectation(){
         $expectation = new PositiveExpectation('');
-        $expectation->setMatchers(array('toMatch' => ['AlwaysTrueMatcher']));
+        $expectation->setMatchers(array('toMatch' => array('AlwaysTrueMatcher')));
         $expectation->not->toMatch('anything');
     }
 
     public function test_negativeExpectationCanBeTurnedToPositiveExpectation(){
         $expectation = new NegativeExpectation('');
-        $expectation->setMatchers(array('toMatch' => ['AlwaysTrueMatcher']));
+        $expectation->setMatchers(array('toMatch' => array('AlwaysTrueMatcher')));
         $expectation->not->toMatch('anything');
     }
 }
@@ -44,7 +44,7 @@ class ExpectationTest extends PHPUnit_Framework_TestCase {
 
 class AlwaysTrueMatcher implements Matcher {
 
-    public function __construct($expected) {
+    public function __construct($expected = null) {
     }
 
     public function matches($actual) {

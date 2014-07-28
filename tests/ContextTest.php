@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../src/PhpJasmine/Context.php';
+require_once __DIR__ . '/../src/Context.php';
 require_once __DIR__ . '/utils/CallbackChecker.php';
 
 class ContextTest extends PHPUnit_Framework_TestCase {

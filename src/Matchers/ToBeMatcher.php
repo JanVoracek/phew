@@ -8,7 +8,7 @@ class ToBeMatcher implements Matcher {
     private $expected;
     private $actual;
 
-    public function __construct($expected) {
+    public function __construct($expected = null) {
         $this->expected = $expected;
     }
 

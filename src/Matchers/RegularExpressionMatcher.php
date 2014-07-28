@@ -8,7 +8,7 @@ class RegularExpressionMatcher implements Matcher {
     private $regularExpression;
     private $compareTarget;
 
-    public function __construct($regularExpression) {
+    public function __construct($regularExpression = null) {
         $this->regularExpression = $regularExpression;
     }
 

@@ -16,6 +16,7 @@ class Example {
         if (is_callable($fn))
             try {
                 $fn();
+                $reporter->reportSucceededExample($this);
             } catch (\Exception $ex) {
                 $reporter->reportFailedExample($this, $ex);
             }
