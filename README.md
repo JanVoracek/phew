@@ -4,6 +4,8 @@ PhpJasmine is Jasmine-like testing framework for PHP. For now it's in exploring 
 
 The goal of this project is to write tests as easily as in Jasmine.
 
+[![Build Status](https://travis-ci.org/JanVoracek/phpjasmine.svg?branch=master)](https://travis-ci.org/JanVoracek/phpjasmine)
+
 ## Code Sample ##
 
 ```php
