@@ -7,7 +7,7 @@ class ContextTest extends PHPUnit_Framework_TestCase {
     /**
      * @var PhpJasmine\Context;
      */
-    private $context;
+    public $context;
 
     protected function setUp() {
         parent::setUp();
