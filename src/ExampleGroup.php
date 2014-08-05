@@ -55,7 +55,10 @@ class ExampleGroup extends Example {
         return new ExampleGroup("", null);
     }
 
-    public function callBeforeEachExample(callable $fn) {
+    /**
+     * @param callable $fn
+     */
+    public function callBeforeEachExample($fn) {
         $this->examplePrepareFunctions[] = $fn;
         foreach($this->examples as $example)
             if($example instanceof ExampleGroup)
@@ -63,7 +66,10 @@ class ExampleGroup extends Example {
 
     }
 
-    public function callAfterEachExample(callable $fn) {
+    /**
+     * @param callable $fn
+     */
+    public function callAfterEachExample($fn) {
         $this->exampleCleanupFunctions[] = $fn;
         foreach($this->examples as $example)
             if($example instanceof ExampleGroup)

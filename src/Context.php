@@ -14,7 +14,12 @@ class Context {
         $this->currentExampleGroup = $this->rootExampleGroup;
     }
 
-    public function describe($title, callable $fn = null) {
+    /**
+     * @param string $title
+     * @param callable $fn
+     * @throws FailException
+     */
+    public function describe($title, $fn = null) {
         $parentGroup = $this->currentExampleGroup;
         $this->currentExampleGroup = new ExampleGroup($title, $parentGroup);
         $parentGroup->add($this->currentExampleGroup);
@@ -30,23 +35,41 @@ class Context {
         }
     }
 
-    public function xdescribe($title, callable $fn = null) {
+    /**
+     * @param string $title
+     * @param callable $fn
+     */
+    public function xdescribe($title, $fn = null) {
     }
 
-    public function it($title, callable $fn = null) {
+    /**
+     * @param string $title
+     * @param callable $fn
+     */
+    public function it($title, $fn = null) {
         $fullName = $this->getFullName();
         $example = new Example($fullName, $fn);
         $this->currentExampleGroup->add($example);
     }
 
-    public function xit($title, callable $fn = null) {
+    /**
+     * @param string $title
+     * @param callable $fn
+     */
+    public function xit($title, $fn = null) {
     }
 
-    public function beforeEach(callable $fn) {
+    /**
+     * @param callable $fn
+     */
+    public function beforeEach($fn) {
         $this->currentExampleGroup->callBeforeEachExample($fn);
     }
 
-    public function afterEach(callable $fn) {
+    /**
+     * @param callable $fn
+     */
+    public function afterEach($fn) {
         $this->currentExampleGroup->callAfterEachExample($fn);
     }
 

@@ -2,32 +2,54 @@
 use PhpJasmine\GlobalContext,
     PhpJasmine\PositiveExpectation;
 
-function describe($title, callable $fn = null) {
+/**
+ * @param string $title
+ * @param callable $fn
+ */
+function describe($title, $fn = null) {
     $context = GlobalContext::getContext();
     $context->describe($title, $fn);
 }
 
-function xdescribe($title, callable $fn = null) {
+/**
+ * @param string $title
+ * @param callable $fn
+ */
+function xdescribe($title, $fn = null) {
     $context = GlobalContext::getContext();
     $context->xdescribe($title, $fn);
 }
 
-function it($title, callable $fn = null) {
+/**
+ * @param string $title
+ * @param callable $fn
+ */
+function it($title, $fn = null) {
     $context = GlobalContext::getContext();
     $context->it($title, $fn);
 }
 
-function xit($title, callable $fn = null) {
+/**
+ * @param string $title
+ * @param callable $fn
+ */
+function xit($title, $fn = null) {
     $context = GlobalContext::getContext();
     $context->xit($title, $fn);
 }
 
-function beforeEach(callable $fn) {
+/**
+ * @param callable $fn
+ */
+function beforeEach($fn) {
     $context = GlobalContext::getContext();
     $context->beforeEach($fn);
 }
 
-function afterEach(callable $fn) {
+/**
+ * @param callable $fn
+ */
+function afterEach($fn) {
     $context = GlobalContext::getContext();
     $context->afterEach($fn);
 }
