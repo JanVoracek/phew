@@ -60,11 +60,11 @@ class Context {
     }
 
     private function getFullName() {
-        $relevantMethods = ['it', 'describe'];
+        $relevantMethods = array('it', 'describe');
         try {
             throw new \Exception("");
         } catch (\Exception $ex) {
-            $exampleCallStack = [];
+            $exampleCallStack = array();
 
             foreach ($ex->getTrace() as $call) {
                 if (isset($call['class']) && $call['class'] == __CLASS__ && in_array($call['function'], $relevantMethods))
