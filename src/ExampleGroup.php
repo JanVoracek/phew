@@ -7,17 +7,17 @@ class ExampleGroup extends Example {
     /**
      * @var Example[]
      */
-    private $examples = [];
+    private $examples = array();
 
     /**
      * @var callable[]
      */
-    private $examplePrepareFunctions = [];
+    private $examplePrepareFunctions = array();
 
     /**
      * @var callable[]
      */
-    private $exampleCleanupFunctions = [];
+    private $exampleCleanupFunctions = array();
 
     function __construct($name, ExampleGroup $group = null) {
         parent::__construct($name, $group, null);

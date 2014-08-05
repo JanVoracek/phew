@@ -19,13 +19,13 @@ require_once __DIR__ . "/Matchers/RegularExpressionMatcher.php";
 
 call_user_func(
     function () {
-        $matchers = [
-            'toBe' => ['PhpJasmine\\Matchers\\ToBeMatcher'],
-            'toEqual' => ['PhpJasmine\\Matchers\\ToEqualMatcher'],
-            'toBeTruthy' => ['PhpJasmine\\Matchers\\BooleanMatcher', true],
-            'toBeFalsy' => ['PhpJasmine\\Matchers\\BooleanMatcher', false],
-            'toBeNull' => ['PhpJasmine\\Matchers\\ToBeMatcher', null],
-            'toMatch' => ['PhpJasmine\\Matchers\\RegularExpressionMatcher']
-        ];
+        $matchers = array(
+            'toBe' => array('PhpJasmine\\Matchers\\ToBeMatcher'),
+            'toEqual' => array('PhpJasmine\\Matchers\\ToEqualMatcher'),
+            'toBeTruthy' => array('PhpJasmine\\Matchers\\BooleanMatcher', true),
+            'toBeFalsy' => array('PhpJasmine\\Matchers\\BooleanMatcher', false),
+            'toBeNull' => array('PhpJasmine\\Matchers\\ToBeMatcher', null),
+            'toMatch' => array('PhpJasmine\\Matchers\\RegularExpressionMatcher')
+        );
         Expectation::setMatchers($matchers);
     });

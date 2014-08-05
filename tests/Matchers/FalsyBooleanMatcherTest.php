@@ -23,7 +23,7 @@ class FalsyBooleanMatcherTest extends PHPUnit_Framework_TestCase {
     }
 
     public function test_falsyMatcherShouldMatchEmptyArray() {
-        $this->assertTrue($this->matcher->matches([]));
+        $this->assertTrue($this->matcher->matches(array()));
     }
 
     public function test_falsyMatcherShouldMatchNull() {

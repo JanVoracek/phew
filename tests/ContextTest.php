@@ -71,9 +71,10 @@ class ContextTest extends PHPUnit_Framework_TestCase {
 
         $this->context->it("", function(){});
 
-        $this->context->describe("", function(){
+        $that = $this;
+        $this->context->describe("", function() use ($that) {
            $nestedCallback = new CallbackChecker();
-           $this->context->it("", $nestedCallback);
+           $that->context->it("", $nestedCallback);
         });
 
         $this->context->beforeEach($callback);

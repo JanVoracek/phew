@@ -1,10 +1,10 @@
 #!/usr/bin/env php
 <?php
 
-$autoloadFiles = [
+$autoloadFiles = array(
     __DIR__.'/../vendor/autoload.php',
     __DIR__.'/../../../autoload.php'
-];
+);
 
 $composerInstalled = false;
 
