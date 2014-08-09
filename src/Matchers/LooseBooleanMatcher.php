@@ -3,7 +3,7 @@ namespace PhpJasmine\Matchers;
 
 use PhpJasmine\Matcher;
 
-class BooleanMatcher implements Matcher {
+class LooseBooleanMatcher implements Matcher {
 
     private $expected;
     private $actual;

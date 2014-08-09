@@ -22,8 +22,8 @@ call_user_func(
         $matchers = array(
             'toBe' => array('PhpJasmine\\Matchers\\ToBeMatcher'),
             'toEqual' => array('PhpJasmine\\Matchers\\ToEqualMatcher'),
-            'toBeTruthy' => array('PhpJasmine\\Matchers\\BooleanMatcher', true),
-            'toBeFalsy' => array('PhpJasmine\\Matchers\\BooleanMatcher', false),
+            'toBeTruthy' => array('PhpJasmine\\Matchers\\LooseBooleanMatcher', true),
+            'toBeFalsy' => array('PhpJasmine\\Matchers\\LooseBooleanMatcher', false),
             'toBeNull' => array('PhpJasmine\\Matchers\\ToBeMatcher', null),
             'toMatch' => array('PhpJasmine\\Matchers\\RegularExpressionMatcher')
         );

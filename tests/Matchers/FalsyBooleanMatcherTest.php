@@ -1,17 +1,17 @@
 <?php
 require_once __DIR__ . '/../../src/Matchers/BooleanMatcher.php';
 
-use \PhpJasmine\Matchers\BooleanMatcher;
+use \PhpJasmine\Matchers\LooseBooleanMatcher;
 
 class FalsyBooleanMatcherTest extends PHPUnit_Framework_TestCase {
 
     /**
-     * @var BooleanMatcher
+     * @var LooseBooleanMatcher
      */
     private $matcher;
 
     protected function setUp() {
-        $this->matcher = new BooleanMatcher(false);
+        $this->matcher = new LooseBooleanMatcher(false);
     }
 
     public function test_falsyMatcherShouldMatchEmptyString() {
