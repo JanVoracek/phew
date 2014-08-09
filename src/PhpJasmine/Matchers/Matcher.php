@@ -1,7 +1,8 @@
 <?php
 namespace PhpJasmine\Matchers;
 
-interface Matcher {
+interface Matcher
+{
     /**
      * @param mixed $expected There is default null value for those matchers that do not require explicit expectation.
      */

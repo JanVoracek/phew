@@ -3,13 +3,16 @@ namespace PhpJasmine\Expectations;
 
 use PhpJasmine\Expectations\Expectation;
 
-class NegativeExpectation extends Expectation {
+class NegativeExpectation extends Expectation
+{
 
-    protected function meetsExpectation($actual) {
+    protected function meetsExpectation($actual)
+    {
         return !$this->matcher->matches($actual);
     }
 
-    protected function getMatcherFailureMessage() {
+    protected function getMatcherFailureMessage()
+    {
         return $this->matcher->getNegativeFailureMessage();
     }
 }

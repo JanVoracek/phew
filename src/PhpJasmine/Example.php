@@ -1,28 +1,33 @@
 <?php
 namespace PhpJasmine;
 
-class Example {
+class Example
+{
 
     private $name;
     private $fn;
 
-    function __construct($name, $fn = null) {
+    function __construct($name, $fn = null)
+    {
         $this->name = $name;
         $this->fn = $fn;
     }
 
-    public function run(Reporter $reporter) {
+    public function run(Reporter $reporter)
+    {
         $fn = $this->fn;
-        if (is_callable($fn))
+        if (is_callable($fn)) {
             try {
                 $fn();
                 $reporter->reportSucceededExample($this);
             } catch (\Exception $ex) {
                 $reporter->reportFailedExample($this, $ex);
             }
+        }
     }
 
-    public function getName() {
+    public function getName()
+    {
         return $this->name;
     }
 }

@@ -5,18 +5,21 @@ use PhpJasmine\Expectations\PositiveExpectation,
     PhpJasmine\Matchers\Matcher;
 
 
-class ExpectationTest extends PHPUnit_Framework_TestCase {
+class ExpectationTest extends PHPUnit_Framework_TestCase
+{
 
     /**
      * @expectedException Exception
      * @expectedExceptionMessage Matcher "toMatch" not found
      */
-    public function test_unknownMatcherThrowsException() {
+    public function test_unknownMatcherThrowsException()
+    {
         $expectation = new PositiveExpectation('');
         $expectation->toMatch('anything');
     }
 
-    public function test_matchersCanBeDynamicallyChanged() {
+    public function test_matchersCanBeDynamicallyChanged()
+    {
         $expectation = new PositiveExpectation('');
         $expectation->setMatchers(array('toMatch' => array('AlwaysTrueMatcher')));
         $expectation->toMatch('anything');
@@ -26,13 +29,15 @@ class ExpectationTest extends PHPUnit_Framework_TestCase {
      * @expectedException \PhpJasmine\Expectations\ExpectationException
      * @expectedExceptionMessage It is matching
      */
-    public function test_positiveExpectationCanBeTurnedToNegativeExpectation(){
+    public function test_positiveExpectationCanBeTurnedToNegativeExpectation()
+    {
         $expectation = new PositiveExpectation('');
         $expectation->setMatchers(array('toMatch' => array('AlwaysTrueMatcher')));
         $expectation->not->toMatch('anything');
     }
 
-    public function test_negativeExpectationCanBeTurnedToPositiveExpectation(){
+    public function test_negativeExpectationCanBeTurnedToPositiveExpectation()
+    {
         $expectation = new NegativeExpectation('');
         $expectation->setMatchers(array('toMatch' => array('AlwaysTrueMatcher')));
         $expectation->not->toMatch('anything');
@@ -40,20 +45,25 @@ class ExpectationTest extends PHPUnit_Framework_TestCase {
 }
 
 
-class AlwaysTrueMatcher implements Matcher {
+class AlwaysTrueMatcher implements Matcher
+{
 
-    public function __construct($expected = null) {
+    public function __construct($expected = null)
+    {
     }
 
-    public function matches($actual) {
+    public function matches($actual)
+    {
         return true;
     }
 
-    public function getFailureMessage() {
+    public function getFailureMessage()
+    {
         return 'It is not matching';
     }
 
-    public function getNegativeFailureMessage() {
+    public function getNegativeFailureMessage()
+    {
         return 'It is matching';
     }
 }

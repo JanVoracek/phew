@@ -1,8 +1,10 @@
 <?php
 namespace PhpJasmine;
 
-class GlobalContext {
-    private function __construct() {
+class GlobalContext
+{
+    private function __construct()
+    {
     }
 
     private static $context = null;
@@ -10,13 +12,16 @@ class GlobalContext {
     /**
      * @return Context
      */
-    public static function getContext() {
-        if (self::$context == null)
+    public static function getContext()
+    {
+        if (self::$context == null) {
             self::$context = new Context();
+        }
         return self::$context;
     }
 
-    public static function setContext(Context $context = null) {
+    public static function setContext(Context $context = null)
+    {
         self::$context = $context;
     }
 }

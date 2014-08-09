@@ -1,13 +1,16 @@
 <?php
 
-class CallbackChecker {
+class CallbackChecker
+{
     private $called = false;
 
-    function __invoke() {
+    function __invoke()
+    {
         $this->called = true;
     }
 
-    public function wasCalled() {
+    public function wasCalled()
+    {
         return $this->called;
     }
 }

@@ -2,19 +2,22 @@
 
 require_once __DIR__ . '/utils/CallbackChecker.php';
 
-class ContextTest extends PHPUnit_Framework_TestCase {
+class ContextTest extends PHPUnit_Framework_TestCase
+{
 
     /**
      * @var PhpJasmine\Context;
      */
     public $context;
 
-    protected function setUp() {
+    protected function setUp()
+    {
         parent::setUp();
         $this->context = new \PhpJasmine\Context();
     }
 
-    public function test_callbackOfDescribeShouldBeCalled() {
+    public function test_callbackOfDescribeShouldBeCalled()
+    {
 
         $callback = new CallbackChecker();
         $this->context->describe("active test", $callback);
@@ -22,14 +25,16 @@ class ContextTest extends PHPUnit_Framework_TestCase {
         $this->assertTrue($callback->wasCalled());
     }
 
-    public function test_callbackOfXdescribeShouldNotBeCalled() {
+    public function test_callbackOfXdescribeShouldNotBeCalled()
+    {
         $callback = new CallbackChecker();
         $this->context->xdescribe("inactive test", $callback);
         $this->context->runExamples();
         $this->assertFalse($callback->wasCalled());
     }
 
-    public function test_callbackOfItShouldBeCalled() {
+    public function test_callbackOfItShouldBeCalled()
+    {
 
         $callback = new CallbackChecker();
         $this->context->it("active test", $callback);
@@ -37,45 +42,64 @@ class ContextTest extends PHPUnit_Framework_TestCase {
         $this->assertTrue($callback->wasCalled());
     }
 
-    public function test_callbackOfXitShouldNotBeCalled() {
+    public function test_callbackOfXitShouldNotBeCalled()
+    {
         $callback = new CallbackChecker();
         $this->context->xit("inactive test", $callback);
         $this->context->runExamples();
         $this->assertFalse($callback->wasCalled());
     }
 
-    public function test_beforeEachShouldBeCalledExactlyAsManyTimesAsThereAreExamples() {
+    public function test_beforeEachShouldBeCalledExactlyAsManyTimesAsThereAreExamples()
+    {
         $callback = $this->getMock("CallbackChecker");
         $randomExampleCount = 5;
         for ($i = 0; $i < $randomExampleCount; $i++) {
-            $this->context->it("", function(){});
+            $this->context->it(
+                "",
+                function () {
+                }
+            );
         }
         $this->context->beforeEach($callback);
         $callback->expects($this->exactly($randomExampleCount))->method("__invoke");
         $this->context->runExamples();
     }
 
-    public function test_afterEachShouldBeCalledExactlyAsManyTimesAsThereAreExamples() {
+    public function test_afterEachShouldBeCalledExactlyAsManyTimesAsThereAreExamples()
+    {
         $callback = $this->getMock("CallbackChecker");
         $randomExampleCount = 5;
         for ($i = 0; $i < $randomExampleCount; $i++) {
-            $this->context->it("", function(){});
+            $this->context->it(
+                "",
+                function () {
+                }
+            );
         }
         $this->context->afterEach($callback);
         $callback->expects($this->exactly($randomExampleCount))->method("__invoke");
         $this->context->runExamples();
     }
 
-    public function test_beforeEachShouldBeCalledForExamplesNestedInAnotherExampleGroup() {
+    public function test_beforeEachShouldBeCalledForExamplesNestedInAnotherExampleGroup()
+    {
         $callback = $this->getMock("CallbackChecker");
 
-        $this->context->it("", function(){});
+        $this->context->it(
+            "",
+            function () {
+            }
+        );
 
         $that = $this;
-        $this->context->describe("", function() use ($that) {
-           $nestedCallback = new CallbackChecker();
-           $that->context->it("", $nestedCallback);
-        });
+        $this->context->describe(
+            "",
+            function () use ($that) {
+                $nestedCallback = new CallbackChecker();
+                $that->context->it("", $nestedCallback);
+            }
+        );
 
         $this->context->beforeEach($callback);
         $callback->expects($this->exactly(2))->method("__invoke");
@@ -86,7 +110,8 @@ class ContextTest extends PHPUnit_Framework_TestCase {
      * @expectedException \PhpJasmine\FailException
      * @expectedExceptionMessage Some message
      */
-    public function test_contextShouldThrowOnFail() {
+    public function test_contextShouldThrowOnFail()
+    {
         $message = "Some message";
         $this->context->fail($message);
     }
@@ -95,9 +120,13 @@ class ContextTest extends PHPUnit_Framework_TestCase {
      * @expectedException \PhpJasmine\FailException
      * @expectedExceptionMessage Unexpected exception
      */
-    public function test_throwingDescribeShouldFailWithUnexpectedExceptionError() {
-        $this->context->describe("", function(){
-            throw new Exception("some title");
-        });
+    public function test_throwingDescribeShouldFailWithUnexpectedExceptionError()
+    {
+        $this->context->describe(
+            "",
+            function () {
+                throw new Exception("some title");
+            }
+        );
     }
 }

@@ -1,6 +1,7 @@
 <?php
 namespace PhpJasmine\Expectations;
 
-class ExpectationException extends \Exception {
+class ExpectationException extends \Exception
+{
 
 }

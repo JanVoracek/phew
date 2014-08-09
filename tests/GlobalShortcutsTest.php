@@ -2,58 +2,73 @@
 require_once __DIR__ . '/../src/phpJasmineShortcuts.php';
 require_once __DIR__ . '/utils/CallbackChecker.php';
 
-class GlobalShortcutsTest extends PHPUnit_Framework_TestCase {
+class GlobalShortcutsTest extends PHPUnit_Framework_TestCase
+{
 
     private $title;
     private $callback;
 
-    protected function setUp() {
+    protected function setUp()
+    {
         $this->title = "random_title";
         $this->callback = new CallbackChecker();
     }
 
-    protected function tearDown() {
+    protected function tearDown()
+    {
         \PhpJasmine\GlobalContext::setContext(null); // reset
     }
 
-    public function test_describeCallsContextDescribe() {
+    public function test_describeCallsContextDescribe()
+    {
         $this->checkStructureShortcut("describe");
     }
 
-    public function test_xdescribeCallsContextXdescribe() {
+    public function test_xdescribeCallsContextXdescribe()
+    {
         $this->checkStructureShortcut("xdescribe");
     }
 
-    public function test_itCallsContextIt() {
+    public function test_itCallsContextIt()
+    {
         $this->checkStructureShortcut("it");
     }
 
-    public function test_xitCallsContextXit() {
+    public function test_xitCallsContextXit()
+    {
         $this->checkStructureShortcut('xit');
     }
 
-    public function test_beforeEachCallsContextBeforeEach() {
+    public function test_beforeEachCallsContextBeforeEach()
+    {
         $this->checkFunctionShortcut('beforeEach');
     }
 
-    public function test_afterEachCallsContextAfterEach() {
+    public function test_afterEachCallsContextAfterEach()
+    {
         $this->checkFunctionShortcut('afterEach');
     }
 
-    public function test_expectCallsContextExpect() {
+    public function test_expectCallsContextExpect()
+    {
         $expectation = expect("some value");
-        $this->assertInstanceOf('\PhpJasmine\PositiveExpectation', $expectation);
+        $this->assertInstanceOf('\PhpJasmine\Expectations\PositiveExpectation', $expectation);
     }
 
-    private function checkStructureShortcut($shortcutName) {
+    private function checkStructureShortcut($shortcutName)
+    {
         $context = $this->getMock('PhpJasmine\Context', array($shortcutName));
         \PhpJasmine\GlobalContext::setContext($context);
 
-        $context->expects($this->once())->method($shortcutName)->with($this->identicalTo($this->title), $this->identicalTo($this->callback));
+        $context->expects($this->once())->method($shortcutName)->with(
+            $this->identicalTo($this->title),
+            $this->identicalTo($this->callback)
+        );
         $shortcutName($this->title, $this->callback);
     }
 
-    private function checkFunctionShortcut($shortcutName) {
+    private function checkFunctionShortcut($shortcutName)
+    {
         $context = $this->getMock('PhpJasmine\Context', array($shortcutName));
         \PhpJasmine\GlobalContext::setContext($context);
 

@@ -17,4 +17,5 @@ call_user_func(
         );
 
         \PhpJasmine\Expectations\Expectation::setMatchers($matchers);
-    });
+    }
+);
