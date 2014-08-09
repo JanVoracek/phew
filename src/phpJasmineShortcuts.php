@@ -1,6 +1,6 @@
 <?php
-use PhpJasmine\GlobalContext,
-    PhpJasmine\Expectations\PositiveExpectation;
+use PhpJasmine\Expectations\PositiveExpectation;
+use PhpJasmine\GlobalContext;
 
 /**
  * @param string $title

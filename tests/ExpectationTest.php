@@ -1,8 +1,8 @@
 <?php
 
-use PhpJasmine\Expectations\PositiveExpectation,
-    PhpJasmine\Expectations\NegativeExpectation,
-    PhpJasmine\Matchers\Matcher;
+use PhpJasmine\Expectations\NegativeExpectation;
+use PhpJasmine\Expectations\PositiveExpectation;
+use PhpJasmine\Matchers\Matcher;
 
 
 class ExpectationTest extends PHPUnit_Framework_TestCase

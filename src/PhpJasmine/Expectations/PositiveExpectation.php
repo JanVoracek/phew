@@ -1,8 +1,6 @@
 <?php
 namespace PhpJasmine\Expectations;
 
-use PhpJasmine\Expectations\Expectation;
-
 class PositiveExpectation extends Expectation
 {
 
