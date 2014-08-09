@@ -1,8 +1,5 @@
 <?php
 namespace PhpJasmine;
-require_once __DIR__ . '/Matcher.php';
-require_once __DIR__ . '/Matchers/ToBeMatcher.php';
-require_once __DIR__ . '/Matchers/ToEqualMatcher.php';
 
 /**
  * @property Expectation not
@@ -70,30 +67,4 @@ abstract class Expectation {
             throw new ExpectationException($this->getMatcherFailureMessage());
         }
     }
-}
-
-class PositiveExpectation extends Expectation {
-
-    protected function meetsExpectation($actual) {
-        return $this->matcher->matches($actual);
-    }
-
-    protected function getMatcherFailureMessage() {
-        return $this->matcher->getFailureMessage();
-    }
-}
-
-class NegativeExpectation extends Expectation {
-
-    protected function meetsExpectation($actual) {
-        return !$this->matcher->matches($actual);
-    }
-
-    protected function getMatcherFailureMessage() {
-        return $this->matcher->getNegativeFailureMessage();
-    }
-}
-
-class ExpectationException extends \Exception {
-
 }

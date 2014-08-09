@@ -1,10 +1,5 @@
 <?php
-use PhpJasmine\Matchers\RegularExpressionMatcher;
-
-include_once __DIR__ . '/../../src/Matcher.php';
-include_once __DIR__ . '/../../src/Matchers/RegularExpressionMatcher.php';
-
-
+use PhpJasmine\Matchers\String\RegularExpressionMatcher;
 
 class RegularExpressionMatcherTest extends PHPUnit_Framework_TestCase {
 

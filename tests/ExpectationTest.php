@@ -1,6 +1,4 @@
 <?php
-require_once __DIR__ . '/../src/Expectation.php';
-require_once __DIR__ . '/../src/Matcher.php';
 
 use PhpJasmine\PositiveExpectation,
     PhpJasmine\NegativeExpectation,
@@ -13,7 +11,7 @@ class ExpectationTest extends PHPUnit_Framework_TestCase {
      * @expectedException Exception
      * @expectedExceptionMessage Matcher "toMatch" not found
      */
-    public function test_unknownMatcherThrowsExeption() {
+    public function test_unknownMatcherThrowsException() {
         $expectation = new PositiveExpectation('');
         $expectation->toMatch('anything');
     }

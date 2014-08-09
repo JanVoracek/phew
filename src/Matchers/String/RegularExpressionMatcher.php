@@ -1,5 +1,5 @@
 <?php
-namespace PhpJasmine\Matchers;
+namespace PhpJasmine\Matchers\String;
 
 use PhpJasmine\Matcher;
 

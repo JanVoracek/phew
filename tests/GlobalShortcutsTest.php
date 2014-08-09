@@ -1,6 +1,4 @@
 <?php
-require_once __DIR__ . '/../src/GlobalContext.php';
-require_once __DIR__ . '/../src/Expectation.php';
 require_once __DIR__ . '/../src/phpJasmineShortcuts.php';
 require_once __DIR__ . '/utils/CallbackChecker.php';
 

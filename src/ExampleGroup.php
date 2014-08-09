@@ -1,8 +1,6 @@
 <?php
 namespace PhpJasmine;
 
-require_once __DIR__ . '/Example.php';
-
 class ExampleGroup extends Example {
     /**
      * @var Example[]

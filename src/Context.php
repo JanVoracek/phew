@@ -1,9 +1,6 @@
 <?php
 namespace PhpJasmine;
 
-require_once __DIR__ . '/ExampleGroup.php';
-require_once __DIR__ . '/Reporter.php';
-
 class Context {
 
     private $rootExampleGroup;

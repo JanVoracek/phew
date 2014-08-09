@@ -1,7 +1,5 @@
 <?php
-require_once __DIR__ . '/../../src/Matchers/BooleanMatcher.php';
-
-use \PhpJasmine\Matchers\LooseBooleanMatcher;
+use \PhpJasmine\Matchers\Equality\LooseBooleanMatcher;
 
 class TruthyBooleanMatcherTest extends PHPUnit_Framework_TestCase {
 

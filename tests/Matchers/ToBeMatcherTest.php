@@ -1,8 +1,6 @@
 <?php
-include_once __DIR__ . '/../../src/Matcher.php';
-include_once __DIR__ . '/../../src/Matchers/ToBeMatcher.php';
 
-use PhpJasmine\Matchers\ToBeMatcher;
+use PhpJasmine\Matchers\Equality\ToBeMatcher;
 
 class ToBeMatcherTest extends PHPUnit_Framework_TestCase {
 
