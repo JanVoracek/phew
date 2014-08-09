@@ -1,9 +1,7 @@
 <?php
 
 function __autoload($className) {
-    $firstNamespaceDelimiterPosition = strpos($className, "\\");
-    $classPath = substr($className, $firstNamespaceDelimiterPosition);
-    $classPath = str_replace("\\", "/", $classPath);
+    $classPath = str_replace("\\", "/", $className);
 
     $path = __DIR__ . "/" . $classPath . ".php";
     if(is_file($path))
