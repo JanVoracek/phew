@@ -39,11 +39,20 @@ The biggest differences are caused by differences between PHP and JS:
 ## Matchers ##
 
 There is for now only basic set of matchers:
- * toBe (strict equality matcher)
- * toEqual (loose equality matcher)
+
+# Strict equality matchers #
+ * toBe
+ * toBeNull
+ * toBeTrue
+ * toBeFalse
+
+# Loose equality matchers #
+ * toEqual
+ * toBeEmpty
  * toBeTruthy
  * toBeFalsy
- * toBeNull
+
+# String matchers #
  * toMatch
 
 # Custom matchers #

@@ -13,6 +13,7 @@ call_user_func(
             'toBeTrue' => array('PhpJasmine\\Matchers\\Equality\\ToBeMatcher', true),
             'toBeFalse' => array('PhpJasmine\\Matchers\\Equality\\ToBeMatcher', false),
             'toBeNull' => array('PhpJasmine\\Matchers\\Equality\\ToBeMatcher', null),
+            'toBeEmpty' => array('PhpJasmine\\Matchers\\Equality\\ToEqualMatcher', null),
             'toMatch' => array('PhpJasmine\\Matchers\\String\\RegularExpressionMatcher')
         );
 

@@ -5,11 +5,18 @@ use PhpJasmine\Matchers\Matcher;
 
 /**
  * @property Expectation not
+ *
+ * // Equality matchers
  * @method void toBe($actual)
+ * @method void toBeNull()
+ * @method void toBeTrue()
+ * @method void toBeFalse()
  * @method void toEqual($actual)
  * @method void toBeTruthy()
  * @method void toBeFalsy()
- * @method void toBeNull()
+ * @method void toBeEmpty()
+ *
+ * // String matchers
  * @method void toMatch($pattern)
  */
 abstract class Expectation

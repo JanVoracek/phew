@@ -17,7 +17,6 @@ class ToBeMatcher implements Matcher
     public function matches($actual)
     {
         $this->actual = $actual;
-
         return $this->expected === $actual;
     }
 
