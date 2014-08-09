@@ -1,5 +1,10 @@
 <?php
-namespace PhpJasmine;
+namespace PhpJasmine\Expectations;
+
+use PhpJasmine\Expectations\ExpectationException;
+use PhpJasmine\Matchers\Matcher;
+use PhpJasmine\Expectations\NegativeExpectation;
+use PhpJasmine\Expectations\PositiveExpectation;
 
 /**
  * @property Expectation not

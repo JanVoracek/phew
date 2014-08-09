@@ -1,5 +1,7 @@
 <?php
-namespace PhpJasmine;
+namespace PhpJasmine\Expectations;
+
+use PhpJasmine\Expectations\Expectation;
 
 class NegativeExpectation extends Expectation {
 

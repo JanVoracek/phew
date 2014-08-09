@@ -1,7 +1,7 @@
 <?php
 namespace PhpJasmine\Matchers\String;
 
-use PhpJasmine\Matcher;
+use PhpJasmine\Matchers\Matcher;
 
 class RegularExpressionMatcher implements Matcher {
 

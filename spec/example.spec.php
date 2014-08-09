@@ -1,6 +1,6 @@
 <?php
 
-use PhpJasmine\Matcher;
+use PhpJasmine\Matchers\Matcher;
 
 describe('PhpJasmine', function () {
     it('should be easy to write PHP tests', function () {
@@ -33,7 +33,7 @@ class GreaterThanMatcher implements Matcher {
     }
 }
 
-\PhpJasmine\Expectation::addMatcher('toBeGreaterThan', 'GreaterThanMatcher');
+\PhpJasmine\Expectations\Expectation::addMatcher('toBeGreaterThan', 'GreaterThanMatcher');
 
 describe('PhpJasmine', function () {
     it('should be easy to write PHP tests', function () {

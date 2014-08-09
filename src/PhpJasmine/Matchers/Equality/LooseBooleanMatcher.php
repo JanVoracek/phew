@@ -1,7 +1,7 @@
 <?php
 namespace PhpJasmine\Matchers\Equality;
 
-use PhpJasmine\Matcher;
+use PhpJasmine\Matchers\Matcher;
 
 class LooseBooleanMatcher implements Matcher {
 

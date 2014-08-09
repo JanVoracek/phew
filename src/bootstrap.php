@@ -1,6 +1,8 @@
 <?php
 
 require_once dirname(__FILE__) . '/autoload.php';
+require_once dirname(__FILE__) . '/phpJasmineShortcuts.php';
+
 call_user_func(
     function () {
         $matchers = array(
@@ -14,5 +16,5 @@ call_user_func(
             'toMatch' => array('PhpJasmine\\Matchers\\String\\RegularExpressionMatcher')
         );
 
-        PhpJasmine\Expectation::setMatchers($matchers);
+        \PhpJasmine\Expectations\Expectation::setMatchers($matchers);
     });

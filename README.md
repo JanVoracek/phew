@@ -49,7 +49,7 @@ There is for now only basic set of matchers:
 # Custom matchers #
 
 It is quiet simple to add custom matcher. Your matcher have to implement 
-the PhpJasmine\Matcher interface and you have to register it.
+the PhpJasmine\Matchers\Matcher interface and you have to register it.
 
 Sample matcher:
 ```php
@@ -81,7 +81,7 @@ class GreaterThanMatcher implements Matcher {
 
 Registering:
 ```php
-\PhpJasmine\Expectation::addMatcher('toBeGreaterThan', 'GreaterThanMatcher');
+\PhpJasmine\Expectations\Expectation::addMatcher('toBeGreaterThan', 'GreaterThanMatcher');
 ```
 
 ## Mocking ##

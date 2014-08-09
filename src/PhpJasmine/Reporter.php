@@ -1,6 +1,8 @@
 <?php
 namespace PhpJasmine;
 
+use PhpJasmine\Expectations\ExpectationException;
+
 class Reporter {
     public function reportSucceededExample(Example $example) {
         echo ".";
