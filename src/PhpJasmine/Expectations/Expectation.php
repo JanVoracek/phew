@@ -14,7 +14,6 @@ use PhpJasmine\Matchers\Matcher;
  */
 abstract class Expectation
 {
-
     private $actual;
 
     /**
@@ -36,16 +35,16 @@ abstract class Expectation
         self::$matchers[$methodName] = $args;
     }
 
-    function __construct($actual)
+    public function __construct($actual)
     {
         $this->actual = $actual;
     }
 
-    protected abstract function meetsExpectation($actual);
+    abstract protected function meetsExpectation($actual);
 
-    protected abstract function getMatcherFailureMessage();
+    abstract protected function getMatcherFailureMessage();
 
-    function __get($name)
+    public function __get($name)
     {
         if ($name === 'not') {
             return $this instanceof PositiveExpectation ?
@@ -54,7 +53,7 @@ abstract class Expectation
         throw new \Exception("Undefined property");
     }
 
-    function __call($name, $arguments)
+    public function __call($name, $arguments)
     {
         if (!isset(self::$matchers[$name]) || !class_exists(self::$matchers[$name][0])) {
             throw new \Exception("Matcher \"$name\" not found");

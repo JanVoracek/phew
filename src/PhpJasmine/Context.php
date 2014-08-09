@@ -16,7 +16,7 @@ class Context
     /**
      * @param string $title
      * @param callable $fn
-     * @throws FailException
+     * @throws \PhpJasmine\Exceptions\FailException
      */
     public function describe($title, $fn = null)
     {
@@ -80,7 +80,7 @@ class Context
 
     public function fail($title)
     {
-        throw new FailException($title);
+        throw new Exceptions\FailException($title);
     }
 
     public function runExamples(Reporter $reporter = null)
@@ -119,9 +119,4 @@ class Context
             return $fullName;
         }
     }
-}
-
-class FailException extends \Exception
-{
-
 }

@@ -3,11 +3,10 @@ namespace PhpJasmine;
 
 class Example
 {
-
     private $name;
     private $fn;
 
-    function __construct($name, $fn = null)
+    public function __construct($name, $fn = null)
     {
         $this->name = $name;
         $this->fn = $fn;

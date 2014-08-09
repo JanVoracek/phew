@@ -107,7 +107,7 @@ class ContextTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \PhpJasmine\FailException
+     * @expectedException \PhpJasmine\Exceptions\FailException
      * @expectedExceptionMessage Some message
      */
     public function test_contextShouldThrowOnFail()
@@ -117,7 +117,7 @@ class ContextTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \PhpJasmine\FailException
+     * @expectedException \PhpJasmine\Exceptions\FailException
      * @expectedExceptionMessage Unexpected exception
      */
     public function test_throwingDescribeShouldFailWithUnexpectedExceptionError()

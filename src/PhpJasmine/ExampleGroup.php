@@ -18,7 +18,7 @@ class ExampleGroup extends Example
      */
     private $exampleCleanupFunctions = array();
 
-    function __construct($name, ExampleGroup $group = null)
+    public function __construct($name, ExampleGroup $group = null)
     {
         parent::__construct($name, $group, null);
     }

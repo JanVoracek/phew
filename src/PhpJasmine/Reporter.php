@@ -1,6 +1,7 @@
 <?php
 namespace PhpJasmine;
 
+use PhpJasmine\Exceptions\FailException;
 use PhpJasmine\Expectations\ExpectationException;
 
 class Reporter
