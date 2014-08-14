@@ -52,6 +52,12 @@ There is for now only basic set of matchers:
  * toBeTruthy
  * toBeFalsy
 
+# Type matchers #
+ * toBeA
+ * toBeAn (alias of toBeA)
+ * toBeInstanceOf (alias of toBeA)
+ * toImplement (alias of toBeA)
+
 # String matchers #
  * toMatch
 

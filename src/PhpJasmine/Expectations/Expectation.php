@@ -16,6 +16,12 @@ use PhpJasmine\Matchers\Matcher;
  * @method void toBeFalsy()
  * @method void toBeEmpty()
  *
+ * // Type matchers
+ * @method void toBeA($type)
+ * @method void toBeAn($type)
+ * @method void toBeInstanceOf($type)
+ * @method void toImplement($type)
+ *
  * // String matchers
  * @method void toMatch($pattern)
  */
