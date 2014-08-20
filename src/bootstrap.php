@@ -20,6 +20,7 @@ call_user_func(
             'toBeInstanceOf' => array('PhpJasmine\\Matchers\\Type\\TypeMatcher'),
             'toImplement' => array('PhpJasmine\\Matchers\\Type\\TypeMatcher'),
             'toStartsWith' => array('PhpJasmine\\Matchers\\String\\PrefixMatcher'),
+            'toEndsWith' => array('PhpJasmine\\Matchers\\String\\SuffixMatcher'),
         );
 
         \PhpJasmine\Expectations\Expectation::setMatchers($matchers);
