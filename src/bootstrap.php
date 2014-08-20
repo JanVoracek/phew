@@ -19,8 +19,9 @@ call_user_func(
             'toBeAn' => array('PhpJasmine\\Matchers\\Type\\TypeMatcher'),
             'toBeInstanceOf' => array('PhpJasmine\\Matchers\\Type\\TypeMatcher'),
             'toImplement' => array('PhpJasmine\\Matchers\\Type\\TypeMatcher'),
-            'toStartsWith' => array('PhpJasmine\\Matchers\\String\\PrefixMatcher'),
-            'toEndsWith' => array('PhpJasmine\\Matchers\\String\\SuffixMatcher'),
+            'toStartWith' => array('PhpJasmine\\Matchers\\String\\PrefixMatcher'),
+            'toEndWith' => array('PhpJasmine\\Matchers\\String\\SuffixMatcher'),
+            'toContain' => array('PhpJasmine\\Matchers\\String\\SubstringMatcher'),
         );
 
         \PhpJasmine\Expectations\Expectation::setMatchers($matchers);

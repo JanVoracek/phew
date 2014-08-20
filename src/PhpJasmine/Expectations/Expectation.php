@@ -23,8 +23,9 @@ use PhpJasmine\Matchers\Matcher;
  * @method void toImplement($type)
  *
  * // String matchers
- * @method void toStartsWith($string)
- * @method void toEndsWith($string)
+ * @method void toStartWith($string)
+ * @method void toEndWith($string)
+ * @method void toContain($string)
  * @method void toMatch($pattern)
  */
 abstract class Expectation
