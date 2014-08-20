@@ -22,6 +22,7 @@ call_user_func(
             'toStartWith' => array('PhpJasmine\\Matchers\\String\\PrefixMatcher'),
             'toEndWith' => array('PhpJasmine\\Matchers\\String\\SuffixMatcher'),
             'toContain' => array('PhpJasmine\\Matchers\\String\\SubstringMatcher'),
+            'toHaveLength' => array('PhpJasmine\\Matchers\\String\\LengthMatcher'),
         );
 
         \PhpJasmine\Expectations\Expectation::setMatchers($matchers);

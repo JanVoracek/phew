@@ -27,6 +27,7 @@ use PhpJasmine\Matchers\Matcher;
  * @method void toEndWith($string)
  * @method void toContain($string)
  * @method void toMatch($pattern)
+ * @method void toHaveLength($string)
  */
 abstract class Expectation
 {
