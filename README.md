@@ -40,28 +40,29 @@ The biggest differences are caused by differences between PHP and JS:
 
 There is for now only basic set of matchers:
 
-# Strict equality matchers #
+### Strict equality matchers ###
  * toBe
  * toBeNull
  * toBeTrue
  * toBeFalse
 
-# Loose equality matchers #
+### Loose equality matchers ###
  * toEqual
  * toBeEmpty
  * toBeTruthy
  * toBeFalsy
 
-# Type matchers #
+### Type matchers ###
  * toBeA
  * toBeAn (alias of toBeA)
  * toBeInstanceOf (alias of toBeA)
  * toImplement (alias of toBeA)
 
-# String matchers #
+### String matchers ###
+ * toStartsWith
  * toMatch
 
-# Custom matchers #
+### Custom matchers ###
 
 It is quiet simple to add custom matcher. Your matcher have to implement 
 the PhpJasmine\Matchers\Matcher interface and you have to register it.

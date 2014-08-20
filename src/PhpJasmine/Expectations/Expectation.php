@@ -23,6 +23,7 @@ use PhpJasmine\Matchers\Matcher;
  * @method void toImplement($type)
  *
  * // String matchers
+ * @method void toStartsWith($string)
  * @method void toMatch($pattern)
  */
 abstract class Expectation
