@@ -8,23 +8,23 @@ class ExampleTest extends PHPUnit_Framework_TestCase
     public function test_exampleIsNotExecutedBeforeRunIsCalled()
     {
         $callback = new CallbackChecker();
-        new \PhpJasmine\Example("", $callback);
+        new \Phew\Example("", $callback);
         $this->assertFalse($callback->wasCalled());
     }
 
     public function test_runExecutesTheExample()
     {
         $callback = new CallbackChecker();
-        $example = new \PhpJasmine\Example("", $callback);
-        $example->run($this->getMock('\PhpJasmine\Reporter'));
+        $example = new \Phew\Example("", $callback);
+        $example->run($this->getMock('\Phew\Reporter'));
         $this->assertTrue($callback->wasCalled());
     }
 
     public function test_onFailureExampleCallsReporterWithReferenceToItselfAndTheException()
     {
         $thrownException = new Exception("some message");
-        $reporter = $this->getMock('\PhpJasmine\Reporter');
-        $example = new \PhpJasmine\Example(
+        $reporter = $this->getMock('\Phew\Reporter');
+        $example = new \Phew\Example(
             "", function () use ($thrownException) {
                 throw $thrownException;
             }
@@ -40,11 +40,11 @@ class ExampleTest extends PHPUnit_Framework_TestCase
     public function test_exampleGroupOnFailureExampleCallsReporterWithReferenceToItselfAndTheException()
     {
         $thrownException = new Exception("some message");
-        $reporter = $this->getMock('\PhpJasmine\Reporter');
-        $example = $this->getMockBuilder('\PhpJasmine\Example')->disableOriginalConstructor()->getMock();
+        $reporter = $this->getMock('\Phew\Reporter');
+        $example = $this->getMockBuilder('\Phew\Example')->disableOriginalConstructor()->getMock();
         $example->expects($this->any())->method('run')->will($this->throwException($thrownException));
 
-        $exampleGroup = new \PhpJasmine\ExampleGroup("");
+        $exampleGroup = new \Phew\ExampleGroup("");
         $exampleGroup->add($example);
         $reporter->expects($this->once())->method('reportFailedExample')->with(
             $this->equalTo($exampleGroup),
@@ -60,7 +60,7 @@ class ExampleTest extends PHPUnit_Framework_TestCase
     public function test_exampleShouldGiveBackItsName()
     {
         $exampleName = "some name";
-        $example = new \PhpJasmine\Example(
+        $example = new \Phew\Example(
             $exampleName, function () {
             }
         );

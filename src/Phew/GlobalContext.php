@@ -1,5 +1,5 @@
 <?php
-namespace PhpJasmine;
+namespace Phew;
 
 class GlobalContext
 {

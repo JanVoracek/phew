@@ -1,5 +1,5 @@
 <?php
-use PhpJasmine\Matchers\String\RegularExpressionMatcher;
+use Phew\Matchers\String\RegularExpressionMatcher;
 
 class RegularExpressionMatcherTest extends PHPUnit_Framework_TestCase
 {

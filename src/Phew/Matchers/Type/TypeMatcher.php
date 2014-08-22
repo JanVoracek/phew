@@ -1,7 +1,7 @@
 <?php
-namespace PhpJasmine\Matchers\Type;
+namespace Phew\Matchers\Type;
 
-use PhpJasmine\Matchers\Matcher;
+use Phew\Matchers\Matcher;
 
 class TypeMatcher implements Matcher {
 

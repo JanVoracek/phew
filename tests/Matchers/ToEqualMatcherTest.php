@@ -1,5 +1,5 @@
 <?php
-use PhpJasmine\Matchers\Equality\ToEqualMatcher;
+use Phew\Matchers\Equality\ToEqualMatcher;
 
 class ToEqualMatcherTest extends PHPUnit_Framework_TestCase
 {

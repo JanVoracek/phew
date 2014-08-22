@@ -1,6 +1,6 @@
 <?php
 
-use PhpJasmine\Matchers\Type\TypeMatcher;
+use Phew\Matchers\Type\TypeMatcher;
 
 class TypeMatcherTest extends PHPUnit_Framework_TestCase {
 

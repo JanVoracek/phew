@@ -1,16 +1,16 @@
-# PhpJasmine #
+# Phew #
 
-PhpJasmine is Jasmine-like testing framework for PHP. For now it's in exploring stage. 
+Phew is Jasmine-like testing framework for PHP. For now it's in exploring stage.
 
 The goal of this project is to write tests as easily as in Jasmine.
 
-[![Build Status](https://travis-ci.org/JanVoracek/phpjasmine.svg?branch=master)](https://travis-ci.org/JanVoracek/phpjasmine)
+[![Build Status](https://travis-ci.org/JanVoracek/phew.svg?branch=master)](https://travis-ci.org/JanVoracek/phew)
 
 ## Code Sample ##
 
 ```php
 <?php
-describe('PhpJasmine', function () {
+describe('Phew', function () {
     it('should be easy to write PHP tests', function () {
         expect('writing PHP tests')->not->toBe('difficult');
     });
@@ -18,19 +18,19 @@ describe('PhpJasmine', function () {
 ```
 
 ## Installation ##
-It is highly recommended to install PhpJasmine using Composer - [http://getcomposer.org/](http://getcomposer.org/).
+It is highly recommended to install Phew using Composer - [http://getcomposer.org/](http://getcomposer.org/).
 
 Run following commands:
 ```
-$ composer global require janvoracek/phpjasmine:dev-master
+$ composer global require janvoracek/phew:dev-master
 ```
 
-Try to run `phpjasmine`. If the command is not found, you have to add
+Try to run `phew`. If the command is not found, you have to add
 `$HOME/.composer/vendor/bin` (Mac) or `%APPDATA%/Composer/bin` (Win) to your PATH.
 
 ## Specs ##
 
-PhpJasmine is designed to be as similar as possible to [Jasmine](http://jasmine.github.io/2.0/introduction.html).
+Phew is designed to be as similar as possible to [Jasmine](http://jasmine.github.io/2.0/introduction.html).
 The biggest differences are caused by differences between PHP and JS:
 
  * Different object operator. JS uses "dot" (`.`), PHP uses "arrow" (`->`).
@@ -65,7 +65,7 @@ There is for now only basic set of matchers:
 ### Custom matchers ###
 
 It is quiet simple to add custom matcher. Your matcher have to implement 
-the PhpJasmine\Matchers\Matcher interface and you have to register it.
+the Phew\Matchers\Matcher interface and you have to register it.
 
 Sample matcher:
 ```php
@@ -97,12 +97,7 @@ class GreaterThanMatcher implements Matcher {
 
 Registering:
 ```php
-\PhpJasmine\Expectations\Expectation::addMatcher('toBeGreaterThan', 'GreaterThanMatcher');
+\Phew\Expectations\Expectation::addMatcher('toBeGreaterThan', 'GreaterThanMatcher');
 ```
-
-## Mocking ##
-
-There is currently no support for mocking. You can basically use any tool you like.
-
 
 Copyright (c) 2013 Jan Voracek. This software is licensed under the MIT License.

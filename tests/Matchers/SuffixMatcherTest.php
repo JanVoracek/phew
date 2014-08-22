@@ -1,7 +1,7 @@
 <?php
 namespace Matchers;
 
-use PhpJasmine\Matchers\String\SuffixMatcher;
+use Phew\Matchers\String\SuffixMatcher;
 
 class SuffixMatcherTest extends \PHPUnit_Framework_TestCase {
 

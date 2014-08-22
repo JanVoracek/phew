@@ -1,7 +1,7 @@
 <?php
 namespace Matchers;
 
-use PhpJasmine\Matchers\String\SubstringMatcher;
+use Phew\Matchers\String\SubstringMatcher;
 
 class SubstringMatcherTest extends \PHPUnit_Framework_TestCase {
 

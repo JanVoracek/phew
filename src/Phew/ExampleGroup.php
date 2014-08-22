@@ -1,5 +1,5 @@
 <?php
-namespace PhpJasmine;
+namespace Phew;
 
 class ExampleGroup extends Example
 {

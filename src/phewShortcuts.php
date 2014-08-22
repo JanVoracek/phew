@@ -1,6 +1,6 @@
 <?php
-use PhpJasmine\Expectations\PositiveExpectation;
-use PhpJasmine\GlobalContext;
+use Phew\Expectations\PositiveExpectation;
+use Phew\GlobalContext;
 
 /**
  * @param string $title

@@ -1,6 +1,6 @@
 <?php
 
-use PhpJasmine\Matchers\Equality\ToBeMatcher;
+use Phew\Matchers\Equality\ToBeMatcher;
 
 class ToBeMatcherTest extends PHPUnit_Framework_TestCase
 {

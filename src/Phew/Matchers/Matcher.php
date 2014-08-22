@@ -1,5 +1,5 @@
 <?php
-namespace PhpJasmine\Matchers;
+namespace Phew\Matchers;
 
 interface Matcher
 {

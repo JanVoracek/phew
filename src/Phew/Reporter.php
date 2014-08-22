@@ -1,14 +1,14 @@
 <?php
-namespace PhpJasmine;
+namespace Phew;
 
-use PhpJasmine\Exceptions\FailException;
-use PhpJasmine\Expectations\ExpectationException;
+use Phew\Exceptions\FailException;
+use Phew\Expectations\ExpectationException;
 
 class Reporter
 {
     public function reportSucceededExample(Example $example)
     {
-        echo ".";
+
     }
 
     public function reportFailedExample(Example $example, \Exception $ex)
@@ -26,6 +26,6 @@ class Reporter
             );
         }
 
-        echo "F";
+        echo $message . "\n";
     }
 }

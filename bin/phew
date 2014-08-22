@@ -67,10 +67,10 @@ foreach ($recursiveSpecIterator as $fileInfo) {
 
 
 echo "
-PhpJasmine (v0.0.1-alpha)
+Phew (v0.0.1-alpha)
 -------------------------
 
 ";
 $start = microtime(true);
-\PhpJasmine\GlobalContext::getContext()->runExamples();
+\Phew\GlobalContext::getContext()->runExamples();
 echo "\n\nExecution time: " . round(microtime(true) - $start, 2) . 's';

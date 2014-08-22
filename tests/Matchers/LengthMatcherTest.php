@@ -1,7 +1,7 @@
 <?php
 namespace Matchers;
 
-use PhpJasmine\Matchers\String\LengthMatcher;
+use Phew\Matchers\String\LengthMatcher;
 
 class LengthMatcherTest extends \PHPUnit_Framework_TestCase {
 

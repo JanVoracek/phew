@@ -1,7 +1,7 @@
 <?php
 namespace Matchers;
 
-use PhpJasmine\Matchers\String\PrefixMatcher;
+use Phew\Matchers\String\PrefixMatcher;
 
 class PrefixMatcherTest extends \PHPUnit_Framework_TestCase {
 

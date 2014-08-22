@@ -1,5 +1,5 @@
 <?php
-namespace PhpJasmine;
+namespace Phew;
 
 class Context
 {
@@ -16,7 +16,7 @@ class Context
     /**
      * @param string $title
      * @param callable $fn
-     * @throws \PhpJasmine\Exceptions\FailException
+     * @throws \Phew\Exceptions\FailException
      */
     public function describe($title, $fn = null)
     {

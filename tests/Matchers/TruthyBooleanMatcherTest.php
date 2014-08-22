@@ -1,5 +1,5 @@
 <?php
-use PhpJasmine\Matchers\Equality\LooseBooleanMatcher;
+use Phew\Matchers\Equality\LooseBooleanMatcher;
 
 class TruthyBooleanMatcherTest extends PHPUnit_Framework_TestCase
 {

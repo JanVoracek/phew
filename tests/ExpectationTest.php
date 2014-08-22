@@ -1,8 +1,8 @@
 <?php
 
-use PhpJasmine\Expectations\NegativeExpectation;
-use PhpJasmine\Expectations\PositiveExpectation;
-use PhpJasmine\Matchers\Matcher;
+use Phew\Expectations\NegativeExpectation;
+use Phew\Expectations\PositiveExpectation;
+use Phew\Matchers\Matcher;
 
 
 class ExpectationTest extends PHPUnit_Framework_TestCase
@@ -26,7 +26,7 @@ class ExpectationTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \PhpJasmine\Expectations\ExpectationException
+     * @expectedException \Phew\Expectations\ExpectationException
      * @expectedExceptionMessage It is matching
      */
     public function test_positiveExpectationCanBeTurnedToNegativeExpectation()

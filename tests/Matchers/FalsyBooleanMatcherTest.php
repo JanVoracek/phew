@@ -1,6 +1,6 @@
 <?php
 
-use PhpJasmine\Matchers\Equality\LooseBooleanMatcher;
+use Phew\Matchers\Equality\LooseBooleanMatcher;
 
 class FalsyBooleanMatcherTest extends PHPUnit_Framework_TestCase
 {

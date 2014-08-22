@@ -1,7 +1,7 @@
 <?php
-namespace PhpJasmine\Expectations;
+namespace Phew\Expectations;
 
-use PhpJasmine\Matchers\Matcher;
+use Phew\Matchers\Matcher;
 
 /**
  * @property Expectation not

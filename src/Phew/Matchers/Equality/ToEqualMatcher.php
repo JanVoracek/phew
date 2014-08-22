@@ -1,7 +1,7 @@
 <?php
-namespace PhpJasmine\Matchers\Equality;
+namespace Phew\Matchers\Equality;
 
-use PhpJasmine\Matchers\Matcher;
+use Phew\Matchers\Matcher;
 
 class ToEqualMatcher implements Matcher
 {

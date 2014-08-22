@@ -1,6 +1,6 @@
 <?php
 
-namespace PhpJasmine\Exceptions;
+namespace Phew\Exceptions;
 
 class FailException extends \Exception
 {

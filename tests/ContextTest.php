@@ -6,14 +6,14 @@ class ContextTest extends PHPUnit_Framework_TestCase
 {
 
     /**
-     * @var PhpJasmine\Context;
+     * @var Phew\Context;
      */
     public $context;
 
     protected function setUp()
     {
         parent::setUp();
-        $this->context = new \PhpJasmine\Context();
+        $this->context = new \Phew\Context();
     }
 
     public function test_callbackOfDescribeShouldBeCalled()
@@ -107,7 +107,7 @@ class ContextTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \PhpJasmine\Exceptions\FailException
+     * @expectedException \Phew\Exceptions\FailException
      * @expectedExceptionMessage Some message
      */
     public function test_contextShouldThrowOnFail()
@@ -117,7 +117,7 @@ class ContextTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \PhpJasmine\Exceptions\FailException
+     * @expectedException \Phew\Exceptions\FailException
      * @expectedExceptionMessage Unexpected exception
      */
     public function test_throwingDescribeShouldFailWithUnexpectedExceptionError()

@@ -1,5 +1,5 @@
 <?php
-namespace PhpJasmine\Expectations;
+namespace Phew\Expectations;
 
 class NegativeExpectation extends Expectation
 {
